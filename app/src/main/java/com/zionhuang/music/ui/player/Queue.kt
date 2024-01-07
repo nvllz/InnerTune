@@ -87,6 +87,7 @@ import com.zionhuang.music.ui.component.BottomSheetState
 import com.zionhuang.music.ui.component.LocalMenuState
 import com.zionhuang.music.ui.component.MediaMetadataListItem
 import com.zionhuang.music.ui.menu.PlayerMenu
+import com.zionhuang.music.ui.menu.QueueListPlayerMenu
 import com.zionhuang.music.utils.makeTimeString
 import com.zionhuang.music.utils.rememberPreference
 import kotlinx.coroutines.delay
@@ -462,14 +463,10 @@ fun Queue(
                                             },
                                             onLongClick = {
                                                 menuState.show {
-                                                    PlayerMenu(
+                                                    QueueListPlayerMenu(
                                                         mediaMetadata = window.mediaItem.metadata!!,
                                                         navController = navController,
                                                         playerBottomSheetState = playerBottomSheetState,
-                                                        isQueueTrigger = true,
-                                                        onShowDetailsDialog = {
-                                                            showDetailsDialog = true
-                                                        },
                                                         onDismiss = menuState::dismiss
                                                     )
                                                 }
@@ -499,14 +496,10 @@ fun Queue(
                                     },
                                     onLongClick = {
                                         menuState.show {
-                                            PlayerMenu(
+                                            QueueListPlayerMenu(
                                                 mediaMetadata = window.mediaItem.metadata!!,
                                                 navController = navController,
                                                 playerBottomSheetState = playerBottomSheetState,
-                                                isQueueTrigger = true,
-                                                onShowDetailsDialog = {
-                                                    showDetailsDialog = true
-                                                },
                                                 onDismiss = menuState::dismiss
                                             )
                                         }
